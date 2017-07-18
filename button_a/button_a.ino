@@ -6,7 +6,7 @@ void setup() {
 
 void loop() {
 
-  // Opdracht A;
+  // Opdracht A; Laat de Marvin wat op het scherm printen als er op de knop wordt gedrukt. 
   // ------------------------------
   
   // Met digitalRead lezen we een 1 (HIGH) of een 0 (LOW) van pin A3
