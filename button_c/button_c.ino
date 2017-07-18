@@ -13,7 +13,7 @@ void setup() {
 
 void loop() {
 
-  // Opdracht B; Laat de Marvin het aantal keer dat er op de knop is gedrukt, op het scherm printen.
+  // Opdracht C; Laat de Marvin nu het aantal seconden tellen dat de knop is ingedrukt.
   // ------------------------------
 
   // Eerst hebben we een variable nodig om het aantal in te bewaren
@@ -27,10 +27,22 @@ void loop() {
     // Als het knopje is ingedrukt, verhogen we aantal met 1
     aantal++;
 
-    // Dan printen we het aantal naar de Serial Monitor
-    Serial.println("Er is " + String(aantal) + " keer op de knop gedrukt");
+    // Dan printen we het aantal seconden naar de Serial Monitor
+    Serial.println("De knop is " + String(aantal) + " seconden ingedrukt.");
+  } else {
+    // Als de pin LOW is (knopje NIET ingedrukt), dan resetten we het aantal naar 0
+    aantal = 0;
   }
 
-  // Zonder deze delay print de Marvin heel vaak. Probeer het maar :)
-  delay(100);
+  // EXTRA: Als we het knopje 5 seconden hebben ingedrukt..
+  if(aantal >= 5) {
+    // Reset dan het aantal weer naar 0
+    aantal = 0;
+
+    // En print de geheime message
+    Serial.println("Yay! 5 seconden ingedrukt!");
+  }
+
+  // Nu een seconde wachten
+  delay(1000);
 }
