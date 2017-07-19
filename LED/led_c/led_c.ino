@@ -29,7 +29,7 @@ void loop() {
       
     } else {
 
-      // Ander stond hij dus aan, en zetten we 'm nu uit
+      // Anders stond hij dus aan, en zetten we 'm nu uit
       led = LOW;
     }
   }
