@@ -17,8 +17,9 @@ void loop() {
   // met readVisibleLux kunnen we uitlezen hoeveel licht de sensor ziet
   int lux = TSL2561.readVisibleLux();
 
-  // En dat printen we vervolgens op het scherm
-  Serial.println("Light: " + String(lux));
+  if(lux < 80) {
+    Serial.println("Het begint donker te worden");
+  }
 
   // en wacht eventjes
   delay(1000);
